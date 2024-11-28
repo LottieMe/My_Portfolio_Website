@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Charlotte's Portfolio</title>
     <!-- Link to Google Fonts for Montserrat font -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
@@ -12,11 +12,43 @@
         body {
             font-family: 'Montserrat', sans-serif;
             /*background-color: #B8B4D6;*/
+            margin: 0;
+            padding: 0;
         }
         /* Smooth scroll */
         html {
             scroll-behavior: smooth;
         }
+
+        /* Navbar styling */
+        .navbar {
+            background-color: rgba(0, 0, 0, 0.13); /* Semi-transparent background */
+            position: fixed;
+            width: 100%;
+            z-index: 10;
+            top: 0;
+            backdrop-filter: blur(8px); /*blur the background behind */
+            height: 20px !important;
+            display: flex;
+            align-items: center;
+            padding: 0; /* Remove padding that might increase height */
+        }
+        .navbar ul.menu li a {
+        line-height: 40px; /* Adjust to match navbar height for vertical alignment */
+        padding: 0 15px; /* Add padding for horizontal spacing */
+        font-size: 18px; /* Adjust font size as needed */
+        }
+
+        section {
+            min-height: 100vh;
+            padding: 20px;
+            /*background: #f0f0f0;*/
+        }
+
+        section:target {
+            background-color: #e0e0e0; /* Highlight the section when it's targeted */
+        }
+
         /* Center main sections vertically */
         main section {
             display: flex;
@@ -48,7 +80,7 @@
             padding: 1.5rem;
         }
         .project-card img {
-            border-radius: 10px;
+            border-radius: 8px;
             margin-bottom: 1rem;
             width: 100%;
             height: auto;
@@ -62,6 +94,35 @@
         .project-card p {
             font-size: 1rem;
             color: white;
+        }
+
+        /* Style for social media icons */
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .social-icons a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            /*background-color: #fff;*/
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            transform: scale(1.1);
+            background-color: #4c4c4c;
+        }
+
+        .social-icons img {
+            width: 45px;
+            height: 45px;
         }
 
 
@@ -88,7 +149,7 @@
                         <a href="#education" id="education-link" class="text-black hover:text-white">Education</a>
                     </li>
                     <li class="text-lg font-bold">
-                        <a href="#contact" id="contact-link" class="text-black hover:text-white">Contact</a>
+                        <a href="#home" id="home-link" class="text-black hover:text-white">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -111,12 +172,28 @@
                     <h1 class="text-6xl font-bold mb-4 text-white">It's me, Charlotte</h1>
                     <h2 class="text-3xl font-bold mb-4 text-white">I'm a Web Designer</h2>
                     <p class="text-lg text-white">
-                        A passionate Web Designer specializing in UI/UX design,
-                        Focus on creating intuitive and engaging digital experiences.
-                        Explore my projects, skills, and education to see what 
-                        I bring to the table. Feel free to contact me 
+                        A passionate Web Designer specializing in UI/UX design,<br>
+                        Focus on creating intuitive and engaging digital experiences.<br>
+                        Explore my projects, skills, and education to see what<br>
+                        I bring to the table. Feel free to contact me<br>
                         for collaborations or opportunities!
                     </p>
+
+                    <!-- Social Media Icons -->
+                    <div class="social-icons">
+                        <a href="https://web.facebook.com/CharLottieMe/" target="_blank">
+                            <img src="icons/fb.png" alt="Facebook">
+                        </a>
+                        <a href="https://www.instagram.com/lotties_is_me/" target="_blank">
+                            <img src="icons/insta.png" alt="Instagram">
+                        </a>
+                        <a href="https://www.linkedin.com" target="_blank">
+                            <img src="icons/linked.png" alt="LinkedIn">
+                        </a>
+                        <a href="https://github.com/LottieMe" target="_blank">
+                            <img src="icons/github1.png" alt="Github">
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -374,12 +451,7 @@
                 </tr>
             </table>
         </section>
-
-        <!-- Section 5: Contact -->
-        <section id="contact">
-            <h1 class="text-4xl font-bold mb-8">Contact</h1>
-            <p>Details about how to contact me...</p>
-        </section>
+        
     </main>
 
     <script>
@@ -399,7 +471,7 @@
 
             links.forEach(link => link.classList.remove('text-white'));
 
-            const activeLink = document.querySelector(`a[href="#${currentSection}"]`);
+            const activeLink = document.querySelector(a[href="#${currentSection}"]);
             if (activeLink) {
                 activeLink.classList.add('text-white');
             }
