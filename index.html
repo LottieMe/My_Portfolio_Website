@@ -11,7 +11,7 @@
         /* Apply Montserrat font globally */
         body {
             font-family: 'Montserrat', sans-serif;
-            background-color: #B8B4D6;
+            /*background-color: #B8B4D6;*/
         }
         /* Smooth scroll */
         html {
@@ -34,6 +34,10 @@
             width: 100%;
             max-width: 1200px;
         }
+        
+        #project h1{
+            margin-bottom: 2rem;
+        }
         .project-card {
             position: relative;
             border-radius: 10px;
@@ -53,12 +57,14 @@
             font-size: 1.5rem;
             font-weight: bold;
             color: white;
-            margin-bottom: 0.5rem;
+            margin-bottom: 3rem;
         }
         .project-card p {
             font-size: 1rem;
             color: white;
         }
+
+
     </style>
 </head>
 <body class="bg-gradient-to-b from-[#6e849e] to-[#6b7777]">
@@ -102,13 +108,14 @@
                 </div>
                 <!-- Right section with text -->
                 <div class="flex-1 px-8 max-w-4xl">
-                    <h1 class="text-6xl font-bold mb-4 text-black">It's me, Charlotte</h1>
-                    <h2 class="text-3xl font-bold mb-4 text-black">I'm a Web Designer</h2>
-                    <p class="text-lg text-black">
-                        As a passionate Web Designer specializing in UI/UX design,
-                        I focus on creating intuitive and engaging digital experiences.
-                        Explore my projects, skills, and education to see what I bring to the table.
-                        Feel free to contact me for collaborations or opportunities!
+                    <h1 class="text-6xl font-bold mb-4 text-white">It's me, Charlotte</h1>
+                    <h2 class="text-3xl font-bold mb-4 text-white">I'm a Web Designer</h2>
+                    <p class="text-lg text-white">
+                        A passionate Web Designer specializing in UI/UX design,
+                        Focus on creating intuitive and engaging digital experiences.
+                        Explore my projects, skills, and education to see what 
+                        I bring to the table. Feel free to contact me 
+                        for collaborations or opportunities!
                     </p>
                 </div>
             </div>
@@ -162,20 +169,126 @@
             </p>
         </div>
     </div>
+
 </section>
 
         <!-- Section 3: Skills -->
-        <section id="skills">
-            <h1 class="text-4xl font-bold mb-8">Skills</h1>
-            <p>Details about my skills...</p>
-        </section>
+        <style>
+            * Skills Section */
+        #skills {
+        text-align: center;
+        padding: 4rem 2rem;
+        color: white;
+        }
 
+        #skills h1 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            font-weight: 600;
+        }
+
+        #skills h2 {
+            font-size: 1.5rem;
+            font-weight: 600; /* Bold font */
+            color: white; 
+            text-align: center; /* Ensure it's centered */
+            margin: 0 auto 1.5rem auto;
+        }
+
+        .skills-category {
+            margin-bottom: 3rem;
+        }
+
+        .skills-row {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap; /* Ensures it adjusts for smaller screens */
+            gap: 3rem; /* Space between icons */
+        }
+
+        .skill-item {
+            display: flex;
+            flex-direction: column; /*Icon and text vertically */
+            align-items: center; /* Center horizontally */
+            text-align: center;
+            color: white;
+        }
+
+        .skill-item img {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 0.5rem;
+            border-radius: 10px; /* Optional: Slightly rounded edges for icons */
+            transition: transform 0.3s ease;
+        }
+
+        .skill-item img:hover {
+            transform: scale(1.1);
+        }
+
+        .skill-item p {
+            font-size: 1rem;
+            font-weight: 500;
+            margin: 0;
+        }
+    </style>
+        
+        <section id="skills">
+            <h1>Skills</h1>
+    
+            <!-- Programming Languages -->
+            <div class="skills-category">
+                <h2>Programming Languages</h2>
+                <div class="skills-row">
+                    <div class="skill-item">
+                        <img src="icons/c_lan.png" alt="C Language">
+                        <p>C Language</p>
+                    </div>
+                    <div class="skill-item">
+                        <img src="icons/python_lan.png" alt="Python Language">
+                        <p>Python Language</p>
+                    </div>
+                    <div class="skill-item">
+                        <img src="icons/java_lan1.png" alt="Java Language">
+                        <p>Java Language</p>
+                    </div>
+                    <div class="skill-item">
+                        <img src="icons/vb_lan.png" alt="VB.Net Language">
+                        <p>VB.Net Language</p>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Design Tools -->
+            <div class="skills-category">
+                <h2>Design Tools</h2>
+                <div class="skills-row">
+                    <div class="skill-item">
+                        <img src="icons/figma_design.png" alt="Figma">
+                        <p>Figma</p>
+                    </div>
+                    <div class="skill-item">
+                        <img src="icons/canva_design1.png" alt="Canva">
+                        <p>Canva</p>
+                    </div>
+                    <div class="skill-item">
+                        <img src="icons/sketch_design.png" alt="Sketch">
+                        <p>Sketch</p>
+                    </div>
+                    <div class="skill-item">
+                        <img src="icons/adobe_design.png" alt="Adobe XD">
+                        <p>Adobe XD</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
         <!-- Section 4: Education -->
         <style>
             /* Center and resize the table */
             #education table {
                 margin: 1.5rem auto; /* Center horizontally and space vertically */
-                width: 90%; /* Make table larger */
+                width: 90%;
                 max-width: 1000px; /* Set a limit for larger screens */
                 border-collapse: collapse; /* Merge borders */
                 font-size: 1.2rem; /* Increase font size */
@@ -185,6 +298,7 @@
             #education th, #education td {
                 border: 1px solid #ccc;
                 padding: 1rem; /* Add space inside cells */
+                text-align: left;
                 text-align: left;
             }
         
@@ -199,10 +313,26 @@
             /*#education tr:nth-child(even) {
                 background-color: #f9f9f9;
             }*/
+
+            #education tr td{
+                color: white;
+            }
         
             #education tr:hover {
                 background-color: #f1f1f1;
             }
+
+            #education tr:hover td {
+            color: rgb(0, 0, 0); /* Set font color to black when hovering */
+            }
+
+            #education h2 {
+            color: white; 
+            text-align: center;
+            font-size: 1.5rem; 
+            margin-bottom: 1rem; /* Add space below the h2 */
+            }
+
         </style>
         
         <section id="education">
