@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charlotte's Portfolio</title>
+    <!-- Link to Google Fonts for Montserrat font -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+        /* Apply Montserrat font globally */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            /*background-color: #B8B4D6;*/
+            margin: 0;
+            padding: 0;
+        }
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Navbar styling */
+        .navbar {
+            background-color: rgba(0, 0, 0, 0.13); /* Semi-transparent background */
+            position: fixed;
+            width: 100%;
+            z-index: 10;
+            top: 0;
+            backdrop-filter: blur(8px); /*blur the background behind */
+            height: 20px !important;
+            display: flex;
+            align-items: center;
+            padding: 0; /* Remove padding that might increase height */
+        }
+        .navbar ul.menu li a {
+        line-height: 40px; /* Adjust to match navbar height for vertical alignment */
+        padding: 0 15px; /* Add padding for horizontal spacing */
+        font-size: 18px; /* Adjust font size as needed */
+        }
+
+        section {
+            min-height: 100vh;
+            padding: 20px;
+            /*background: #f0f0f0;*/
+        }
+
+        section:target {
+            /*background-color: #e0e0e0;  Highlight the section when it's targeted */
+        }
+
+        /* Center main sections vertically */
+        main section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 2rem;
+        }
+        /* Project grid alignment */
+        #projects .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            width: 100%;
+            max-width: 1200px;
+        }
+        
+        #project h1{
+            margin-bottom: 2rem;
+        }
+        .project-card {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            background-color: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(5px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+        }
+        .project-card img {
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            width: 100%;
+            height: auto;
+        }
+        .project-card h1 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 3rem;
+        }
+        .project-card p {
+            font-size: 1rem;
+            color: white;
+        }
+
+        /* Style for social media icons */
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .social-icons a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            /*background-color: #fff;*/
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            transform: scale(1.1);
+            background-color: #4c4c4c;
+        }
+
+        .social-icons img {
+            width: 45px;
+            height: 45px;
+        }
+
+
+    </style>
+</head>
+<body class="bg-gradient-to-b from-[#6e849e] to-[#6b7777]">
+
+    <!-- Header with Navbar -->
+    <header>
+        <div class="navbar px-32 bg-transparent fixed w-full z-10 top-0">
+            <div class="flex-1"></div>
+            <div class="flex-none">
+                <ul class="menu menu-horizontal px-1">
+                    <li class="text-lg font-bold">
+                        <a href="#home" id="home-link" class="text-black hover:text-white">Home</a>
+                    </li>
+                    <li class="text-lg font-bold">
+                        <a href="#projects" id="projects-link" class="text-black hover:text-white">Projects</a>
+                    </li>
+                    <li class="text-lg font-bold">
+                        <a href="#skills" id="skills-link" class="text-black hover:text-white">Skills</a>
+                    </li>
+                    <li class="text-lg font-bold">
+                        <a href="#education" id="education-link" class="text-black hover:text-white">Education</a>
+                    </li>
+                    <li class="text-lg font-bold">
+                        <a href="#home" id="home-link" class="text-black hover:text-white">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main content with sections -->
+    <main>
+        <!-- Section 1: Home -->
+        <section id="home">
+            <div class="flex items-center justify-center max-w-screen-xl w-full px-8">
+                <!-- Left section with image -->
+                <div class="flex-1 flex justify-center">
+                    <img src="./profile.jpg" 
+                         alt="Placeholder Image" 
+                         class="rounded-full shadow-lg">
+                </div>
+                <!-- Right section with text -->
+                <div class="flex-1 px-8 max-w-4xl">
+                    <h1 class="text-6xl font-bold mb-4 text-white">It's me, Charlotte</h1>
+                    <h2 class="text-3xl font-bold mb-4 text-white">I'm a Web Designer</h2>
+                    <p class="text-lg text-white">
+                        A passionate Web Designer specializing in UI/UX design,<br>
+                        Focus on creating intuitive and engaging digital experiences.<br>
+                        Explore my projects, skills, and education to see what<br>
+                        I bring to the table. Feel free to contact me<br>
+                        for collaborations or opportunities!
+                    </p>
+
+                    <!-- Social Media Icons -->
+                    <div class="social-icons">
+                        <a href="https://web.facebook.com/CharLottieMe/" target="_blank">
+                            <img src="icons/fb.png" alt="Facebook">
+                        </a>
+                        <a href="https://www.instagram.com/lotties_is_me/" target="_blank">
+                            <img src="icons/insta.png" alt="Instagram">
+                        </a>
+                        <a href="https://www.linkedin.com" target="_blank">
+                            <img src="icons/linked.png" alt="LinkedIn">
+                        </a>
+                        <a href="https://github.com/LottieMe" target="_blank">
+                            <img src="icons/github1.png" alt="Github">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Projects -->
+        <section id="projects" class="w-full min-h-screen flex items-center justify-center bg-transparent py-16">
+            <h1 class="text-4xl font-bold mb-8">Projects</h1>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 px-4 w-full max-w-screen-xl">
+        <!-- Project Card 1 -->
+        <div class="relative rounded-lg overflow-hidden bg-white bg-opacity-30 backdrop-blur-lg shadow-xl p-6">
+            <img src="project/stuportal.png" 
+                 alt="Project Image" 
+                 class="rounded-lg mb-4 w-full h-auto">
+            <h1 class="text-2xl font-bold text-white mb-2">QCU Student Portal System</h1>
+            <p class="text-lg text-white">
+                A streamlined platform enabling students to effortlessly
+                access academic records and university information online.
+                From checking enrollment status and grades
+                to viewing class schedules and financial details,
+                this system empowers students with remote access
+                to their educational journey.
+            </p>
+        </div>
+
+        <!-- Project Card 2 -->
+        <div class="relative rounded-lg overflow-hidden bg-white bg-opacity-30 backdrop-blur-lg shadow-xl p-6">
+            <img src="project/ordersys.png" 
+                 alt="Project Image" 
+                 class="rounded-lg mb-4 w-full h-auto">
+            <h1 class="text-2xl font-bold text-white mb-2">Cafe Ordering System</h1>
+            <p class="text-lg text-white">
+                An intuitive and interactive system designed for
+                seamless order processing in a cafe. It efficiently
+                calculates orders for pastries and hot or cold drinks,
+                offering a user-friendly interface tailored for cashiers
+                to enhance speed and accuracy.
+            </p>
+        </div>
+
+        <!-- Project Card 3 -->
+        <div class="relative rounded-lg overflow-hidden bg-white bg-opacity-30 backdrop-blur-lg shadow-xl p-6">
+            <img src="project/payrollsys.png" 
+                 alt="Project Image" 
+                 class="rounded-lg mb-4 w-full h-auto">
+            <h1 class="text-2xl font-bold text-white mb-2">Payroll Management System for HR</h1>
+            <p class="text-lg text-white">
+                Streamline HR tasks with an efficient payroll system that
+                calculates employee contributions (time-ins, OT, incentives,
+                allowances) and deductions (tax, SSS, Pag-IBIG, PhilHealth).
+                Designed to optimize productivity and financial operations
+                for seamless company management.
+            </p>
+        </div>
+
+        <!-- Project Card 4 -->
+        <div class="relative rounded-lg overflow-hidden bg-white bg-opacity-30 backdrop-blur-lg shadow-xl p-6">
+            <img src="project/healthcenter.png" 
+                 alt="Project Image" 
+                 class="rounded-lg mb-4 w-full h-auto">
+            <h1 class="text-2xl font-bold text-white mb-2">Brgy.Bagbag Health Center Portal</h1>
+            <p class="text-lg text-white">
+                A secure desktop web app for Barangay Bagbag, offering
+                services like appointment scheduling, medical record
+                management, BMI calculation, and real-time communication.
+                Built with JavaScript, CSS, HTML, and MySQL, it features
+                face recognition login, SMS health reminders, and multi-language
+                support in English and Tagalog for better accessibility.
+            </p>
+        </div>
+    </div>
+
+</section>
+
+        <!-- Section 3: Skills -->
+        <style>
+            * Skills Section */
+        #skills {
+        text-align: center;
+        padding: 4rem 2rem;
+        color: white;
+        }
+
+        #skills h1 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            font-weight: 600;
+        }
+
+        #skills h2 {
+            font-size: 1.5rem;
+            font-weight: 600; /* Bold font */
+            color: white; 
+            text-align: center; /* Ensure it's centered */
+            margin: 0 auto 1.5rem auto;
+        }
+
+        .skills-category {
+            margin-bottom: 3rem;
+        }
+
+        .skills-row {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap; /* Ensures it adjusts for smaller screens */
+            gap: 3rem; /* Space between icons */
+        }
+
+        .skill-item {
+            display: flex;
+            flex-direction: column; /*Icon and text vertically */
+            align-items: center; /* Center horizontally */
+            text-align: center;
+            color: white;
+        }
+
+        .skill-item img {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 0.5rem;
+            border-radius: 10px; /* Optional: Slightly rounded edges for icons */
+            transition: transform 0.3s ease;
+        }
+
+        .skill-item img:hover {
+            transform: scale(1.1);
+        }
+
+        .skill-item p {
+            font-size: 1rem;
+            font-weight: 500;
+            margin: 0;
+        }
+    </style>
+        
+        <section id="skills">
+            <h1>Skills</h1>
+    
+            <!-- Programming Languages -->
+            <div class="skills-category">
+                <h2>Programming Languages</h2>
+                <div class="skills-row">
+                    <div class="skill-item">
+                        <img src="icons/c_lan.png" alt="C Language">
+                        <p>C Language</p>
+                    </div>
+                    <div class="skill-item">
+                        <img src="icons/python_lan.png" alt="Python Language">
+                        <p>Python Language</p>
+                    </div>
+                    <div class="skill-item">
+                        <img src="icons/java_lan1.png" alt="Java Language">
+                        <p>Java Language</p>
+                    </div>
+                    <div class="skill-item">
+                        <img src="icons/vb_lan.png" alt="VB.Net Language">
+                        <p>VB.Net Language</p>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Design Tools -->
+            <div class="skills-category">
+                <h2>Design Tools</h2>
+                <div class="skills-row">
+                    <div class="skill-item">
+                        <img src="icons/figma_design.png" alt="Figma">
+                        <p>Figma</p>
+                    </div>
+                    <div class="skill-item">
+                        <img src="icons/canva_design1.png" alt="Canva">
+                        <p>Canva</p>
+                    </div>
+                    <div class="skill-item">
+                        <img src="icons/sketch_design.png" alt="Sketch">
+                        <p>Sketch</p>
+                    </div>
+                    <div class="skill-item">
+                        <img src="icons/adobe_design.png" alt="Adobe XD">
+                        <p>Adobe XD</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Section 4: Education -->
+        <style>
+            /* Center and resize the table */
+            #education table {
+                margin: 1.5rem auto; /* Center horizontally and space vertically */
+                width: 90%;
+                max-width: 1000px; /* Set a limit for larger screens */
+                border-collapse: collapse; /* Merge borders */
+                font-size: 1.2rem; /* Increase font size */
+            }
+        
+            /* Add padding and borders */
+            #education th, #education td {
+                border: 1px solid #ccc;
+                padding: 1rem; /* Add space inside cells */
+                text-align: left;
+                text-align: left;
+            }
+        
+            /* Style table header */
+            #education th {
+                background-color: #5b2872;
+                color: white;
+                font-weight: bold;
+            }
+        
+            /* Alternating row colors for readability */
+            /*#education tr:nth-child(even) {
+                background-color: #f9f9f9;
+            }*/
+
+            #education tr td{
+                color: white;
+            }
+        
+            #education tr:hover {
+                background-color: #f1f1f1;
+            }
+
+            #education tr:hover td {
+            color: rgb(0, 0, 0); /* Set font color to black when hovering */
+            }
+
+            #education h2 {
+            color: white; 
+            text-align: center;
+            font-size: 1.5rem; 
+            margin-bottom: 1rem; /* Add space below the h2 */
+            }
+
+        </style>
+        
+        <section id="education">
+            <h1 class="text-4xl font-bold mb-8">Education</h1>
+            <!--<h2 class="text-2xl font-bold">Courses</h2>-->
+            <table>
+                <tr>
+                    <th>Course</th>
+                    <th>School</th>
+                    <th>Year</th>
+                </tr>
+                <tr>
+                    <td>JHS: Cosmetology</td>
+                    <td>Sumuroy Agro-Industrial School</td>
+                    <td>2013-2017</td>
+                </tr>
+                <tr>
+                    <td>SHS: TVL Track-Cookery</td>
+                    <td>Sumuroy Agro-Industrial School</td>
+                    <td>2018-2020</td>
+                </tr>
+                <tr>
+                    <td>BS Information Technology</td>
+                    <td>Quezon City University</td>
+                    <td>2023-Currently</td>
+                </tr>
+            </table>
+            <h2 class="text-2xl font-bold">Certificates</h2>
+            <table>
+                <tr>
+                    <th>Certificate</th>
+                    <th>Institution</th>
+                    <th>Year</th>
+                </tr>
+                <tr>
+                    <td>CSC: Certificate of Eligibility</td>
+                    <td>Civil Service Commission</td>
+                    <td>2023</td>
+                </tr>
+            </table>
+        </section>
+        
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navbarLinks = document.querySelectorAll('.navbar a');
+            const sections = document.querySelectorAll('section');
+            
+            function setActiveLink() {
+                let index = sections.length;
+    
+                while (--index && window.scrollY + 50 < sections[index].offsetTop) {}
+    
+                navbarLinks.forEach((link) => link.classList.remove('active'));
+                navbarLinks[index].classList.add('active');
+            }
+    
+            window.addEventListener('scroll', setActiveLink);
+            setActiveLink(); // Initialize on page load
+        });
+    </script>
+    
+</body>
+</html>
